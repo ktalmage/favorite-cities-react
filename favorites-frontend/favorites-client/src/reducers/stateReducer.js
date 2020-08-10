@@ -6,6 +6,7 @@ export default (state = { usstates: [], loading: false}, action) => {
                 loading: true
             }
         case "STATES_LOADED":
+            debugger
             return {
                 ...state,
                 usstates: action.payload,

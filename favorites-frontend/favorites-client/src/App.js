@@ -5,7 +5,7 @@ import { getStates } from './actions/states'
 
 class App extends Component {
   componentDidMount(){
-
+    this.props.getStates()
   }
   render(){
     const usstates = this.props.usstates.map((usstate, i) => <li key={i}>{usstate.name}</li>)

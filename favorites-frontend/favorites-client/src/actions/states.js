@@ -1,7 +1,7 @@
 export const getStates = () => {
-    return dispatch => {
+    return (dispatch) => {
         dispatch({type: "LOADING_STATES"})
-        return fetch('http://localhost:3000/states')
+        fetch('http://127.0.0.1:3001/states')
         .then(resp => resp.json())
         .then(usstates => dispatch({type: "STATES_LOADED", payload: usstates}))
     }
