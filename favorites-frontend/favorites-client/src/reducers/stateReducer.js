@@ -8,7 +8,7 @@ export default (state = { usstates: [], loading: false}, action) => {
         case "STATES_LOADED":
             return {
                 ...state,
-                usstates: usstates,
+                usstates: action.payload,
                 loading: false
             }
         default: 

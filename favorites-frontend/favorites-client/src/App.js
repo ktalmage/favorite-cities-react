@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import './App.css';
+import { getStates } from './actions/states'
 
 class App extends Component {
   componentDidMount(){
@@ -26,4 +27,4 @@ const mapStateToProps = state => {
     loading: state.stateReducer.loading
   }
 }
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, { getStates })(App);
