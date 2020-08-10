@@ -5,3 +5,5 @@ import stateReducer from './stateReducer'
 const rootReducers = combineReducers({
     stateReducer
 })
+
+export default rootReducers
