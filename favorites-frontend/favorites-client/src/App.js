@@ -8,7 +8,7 @@ class App extends Component {
     this.props.getStates()
   }
   render(){
-    const usstates = this.props.usstates.map((usstate, i) => <li key={i}>{usstate.name}</li>)
+  const usstates =  this.props.usstates.map((usstate, i) => <li key={i}>{usstate.name}</li>)
     return (
       <div className="App">
         <h2>Favorite Cities</h2>
