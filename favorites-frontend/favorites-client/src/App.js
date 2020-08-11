@@ -6,15 +6,19 @@ import { getStates } from './actions/states'
 class App extends Component {
   componentDidMount(){
     this.props.getStates()
+  
+    
   }
   render(){
-  const usstates =  this.props.usstates.map((usstate, i) => <li key={i}>{usstate.name}</li>)
+  
+  const usstates =  this.props.usstates.map((usstate, i) => 
+  <option key={i}>{usstate.name}</option>)
     return (
       <div className="App">
         <h2>Favorite Cities</h2>
-        <ul>
+        <select>
           {this.props.loading ? <h4>Loading...</h4> : usstates}
-        </ul>
+        </select>
       </div>
       );
     }

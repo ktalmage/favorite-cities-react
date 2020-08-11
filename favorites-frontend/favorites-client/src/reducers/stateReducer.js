@@ -1,4 +1,4 @@
-export default (state = { usstates: [], loading: false}, action) => {
+export default (state = { usstates : [], loading: false}, action) => {
     switch(action.type) {
         case "LOADING_STATES": 
             return {
@@ -9,7 +9,7 @@ export default (state = { usstates: [], loading: false}, action) => {
             
             return {
                 ...state,
-                usstates: action.payload,
+                usstates: action.payload.data,
                 loading: false
             }
         default: 
