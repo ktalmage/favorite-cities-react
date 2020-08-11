@@ -12,13 +12,14 @@ class App extends Component {
   render(){
   
   const usstates =  this.props.usstates.map((usstate, i) => 
-  <option key={i}>{usstate.name}</option>)
+  <option key={i}>{usstate.attributes.name}</option>)
     return (
       <div className="App">
         <h2>Favorite Cities</h2>
-        <select>
-          {this.props.loading ? <h4>Loading...</h4> : usstates}
-        </select>
+        
+          {this.props.loading ? <h4>Loading...</h4> : 
+          <select>{usstates}</select>}
+        
       </div>
       );
     }
