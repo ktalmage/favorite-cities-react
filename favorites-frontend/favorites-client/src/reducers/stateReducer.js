@@ -6,7 +6,7 @@ export default (state = { usstates : [], loading: false}, action) => {
                 loading: true
             }
         case "STATES_LOADED":
-            
+            console.log(action)
             return {
                 ...state,
                 usstates: action.payload.data,
