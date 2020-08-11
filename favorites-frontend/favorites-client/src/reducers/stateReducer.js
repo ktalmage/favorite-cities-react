@@ -12,7 +12,18 @@ export default (state = { usstates : [], loading: false}, action) => {
                 usstates: action.payload.data,
                 loading: false
             }
+        case "ADDING_STATE":
+            return {
+                ...state,
+                loading: true
+            }
+            case "STATE_ADDED":
+                return {
+                    ...state,
+                    usstates: [...state.usstates, action.payload.data],
+                    loading: false
+            }
         default: 
-        return state
+            return state
     }
 }
