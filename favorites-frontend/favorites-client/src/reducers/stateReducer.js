@@ -23,6 +23,18 @@ export default (state = { usstates : [], loading: false}, action) => {
                     usstates: [...state.usstates, action.payload.data],
                     loading: false
             }
+
+            case "DELETING_STATE":
+                return {
+                    ...state,
+                    loading: true
+                }
+
+            case "STATE_DELETED": 
+                return {
+                    ...state,
+                    usstates: [...state.usstates.filter(usstate => `${usstate.id}` !== action.payload.data)]
+                }
         default: 
             return state
     }

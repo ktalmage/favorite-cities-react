@@ -22,5 +22,18 @@ export const getStates = () => {
             .then(usstate => dispatch({type: "STATE_ADDED", payload: usstate}))
     }
 }
+
+    export const deleteState = (id) => {
+        return (dispatch) => {
+            dispatch({ type: "DELETING_STATE"})
+            fetch(`http://127.0.0.1:3001/states/${id}`, {
+                method: "DELETE",
+                headers: {
+                    'Content-Type' : 'application/json'
+                }
+            })
+            .then(() => dispatch({ type: "STATE_DELETED", payload: id}))
+        }
+    }
  
     
