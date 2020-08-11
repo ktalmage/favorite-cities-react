@@ -16,11 +16,9 @@ class App extends Component {
     return (
       <div className="App">
         <h2>Favorite Cities</h2>
-        
-          {this.props.loading ? <h4>Loading...</h4> : 
+        {this.props.loading ? <h4>Loading...</h4> : 
           <select>{usstates}</select>}
-        
-      </div>
+        </div>
       );
     }
   }
