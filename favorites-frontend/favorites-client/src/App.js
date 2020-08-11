@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import './App.css';
-import { getStates, deleteState } from './actions/states'
+import { getStates } from './actions/states'
 import StateForm from './containers/StateForm'
+import CityForm from './containers/CityForm'
 
 class App extends Component {
   componentDidMount(){
@@ -16,14 +17,15 @@ class App extends Component {
   
   const usstates =  this.props.usstates.map((usstate, i) => 
   <option key={i}>{usstate.attributes.name}</option>)
-  // <button id={usstate.id} onClick={this.handleClick}></button>
+  
     return (
       <div className="App">
-        <h2>Create State</h2>
-          <StateForm/>
         <h2>Favorite Cities</h2>
         {this.props.loading ? <h4>Loading...</h4> : 
           <select>{usstates}</select>}
+          <CityForm/>
+          <h2>Cities I've Visited</h2>
+        
         </div>
       );
     }
@@ -36,4 +38,4 @@ const mapStateToProps = state => {
     loading: state.stateReducer.loading
   }
 }
-export default connect(mapStateToProps, { getStates, deleteState })(App);
+export default connect(mapStateToProps, { getStates })(App);
