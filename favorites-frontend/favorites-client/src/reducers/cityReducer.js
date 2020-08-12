@@ -20,7 +20,7 @@ export default (state = { cities : [], loading: false}, action) => {
             case "CITY_ADDED":
                 return {
                     ...state,
-                    usCITIES: [...state.cities, action.payload.data],
+                    cities: [...state.cities, action.payload.data],
                     loading: false
             }
 
