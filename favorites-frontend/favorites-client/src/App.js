@@ -21,14 +21,20 @@ class App extends Component {
   <option key={i}>{usstate.attributes.name}</option>)
   
     return (
+      <Router>
       <div className="App">
+        <Switch>
+          <Route exact path='/' component={Home}/>
+          <Route exact path='/categories' component/>
+          <Route/>
         <h2>Favorite Cities</h2>
         {this.props.loading ? <h4>Loading...</h4> : 
           <select>{usstates}</select>}
           <CityForm/>
           <h2>Cities I've Visited</h2>
-        
+        </Switch>
         </div>
+      </Router>
       );
     }
   }
