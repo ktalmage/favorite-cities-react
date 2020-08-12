@@ -31,7 +31,7 @@ import { addCity } from '../actions/cities'
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <input type="text" value={this.state.name}
+                    <input type="text" value={this.state.city.name}
                     onChange={this.handleChange}/>
                 </form>
             </div>
