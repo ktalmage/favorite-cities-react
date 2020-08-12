@@ -1,7 +1,9 @@
+const CITY_URL = 'http://127.0.0.1:3001/cities'
+
 export const getCities = () => {
     return (dispatch) => {
         dispatch({type: "LOADING_CITIES"})
-        fetch('http://127.0.0.1:3001/cities')
+        fetch(CITY_URL)
         .then(resp => resp.json())
         .then(cities => {dispatch({type: "CITYS_LOADED", payload: cities})
         
@@ -11,7 +13,7 @@ export const getCities = () => {
     export const addCity = (city) => {
         return (dispatch) => {
             dispatch({type: "ADDING_CITY"})
-            fetch('http://127.0.0.1:3001/cities',{
+            fetch(CITY_URL,{
                 method: "POST",
                 body: JSON.stringify(city),
                 headers: {
@@ -26,7 +28,7 @@ export const getCities = () => {
     export const deleteCity = (id) => {
         return (dispatch) => {
             dispatch({ type: "DELETING_CITY"})
-            fetch(`http://127.0.0.1:3001/cities/${id}`, {
+            fetch(`${CITY_URL}/${id}`, {
                 method: "DELETE",
                 headers: {
                     'Content-Type' : 'application/json'

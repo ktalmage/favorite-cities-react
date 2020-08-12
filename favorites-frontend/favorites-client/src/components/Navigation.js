@@ -11,14 +11,14 @@ const link = {
 
 }
 
-const Navigation = () => (
+const Navigation = (id) => (
     <div>
         <NavLink
             to="/"
             exact
             style={link}
             activeStyle={{
-                background: 'lightgreen'
+                background: 'darkgreen'
             }}
         >
         Home</NavLink>
@@ -27,10 +27,11 @@ const Navigation = () => (
             exact
             style={link}
             activeStyle={{
-                background: 'lightgreen'
+                background: 'darkgreen'
             }}
         >
         Cities</NavLink>
+       
     </div>
     )
 

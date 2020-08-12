@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { addState } from '../actions/states'
+import { getStates } from '../actions/states'
 import { addCity } from '../actions/cities'
+import { getCities } from '../actions/cities'
+
+
 
  class CityForm extends Component {
      state = {
@@ -26,12 +29,20 @@ import { addCity } from '../actions/cities'
             loading: false
         })
      }
+     componentDidMount(){
+        this.props.getCities()
+      }
 
     render() {
+        const usstates =  this.props.usstates.map((usstate, i) => 
+        <option key={i}>{usstate.attributes.name}</option>)
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <input type="text" value={this.state.city.name}
+           <div>
+              <form onSubmit={this.handleSubmit}>
+                  
+                {this.props.loading ? <h4>Loading...</h4> : 
+                <select>{usstates}</select>}
+                    <input type="text" value={this.state.cities.name}
                     onChange={this.handleChange}/>
                 </form>
             </div>
@@ -39,4 +50,11 @@ import { addCity } from '../actions/cities'
     }
 }
 
-export default connect(null, { addState, addCity })(CityForm)
+const mapStateToProps = state => {
+    return{
+      usstates: state.stateReducer.usstates,
+      loading: state.stateReducer.loading
+    }
+  }
+
+export default connect(mapStateToProps, { addCity, getStates, getCities })(CityForm)
