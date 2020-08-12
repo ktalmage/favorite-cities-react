@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addState } from '../actions/states'
 
- class StateForm extends Component {
+ class StateContainer extends Component {
      state = {
         usstate: {
             name: ""
@@ -38,4 +38,4 @@ import { addState } from '../actions/states'
     }
 }
 
-export default connect(null, { addState })(StateForm)
+export default connect(null, { addState })(StateContainer)
