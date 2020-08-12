@@ -3,7 +3,8 @@ import { connect } from 'react-redux'
 import { getStates } from '../actions/states'
 import { getCities } from '../actions/cities'
 import { addCity } from '../actions/cities'
-class CityForm extends Component {
+
+class CityContainer extends Component {
      state = {
         city: {
             name: "",
@@ -15,8 +16,9 @@ class CityForm extends Component {
      }
 
      handleChange = event => {
+         const { name, value} = event.target
         this.setState({
-            name: event.target.value
+            [name]: value
         })
      }
 
@@ -27,11 +29,14 @@ class CityForm extends Component {
         this.props.addCity(city)
         this.setState({
             name: "",
+            zipcode: "",
+            title: "",
+            description: "",
             loading: false
         })
      }
      componentDidMount(){
-        // this.props.getCities()
+        this.props.getCities()
         this.props.getStates()
       }
 
@@ -50,7 +55,7 @@ class CityForm extends Component {
                    <b>Title:</b><input type="text" value={this.state.title}></input>
                    <b>Description:</b><input type="textarea" value={this.state.title}></input>
                     
-                    <input onChange={this.handleChange} type="submit"></input>
+                    <input  type="submit"></input>
                 </form>
             </div>
         )
@@ -67,4 +72,4 @@ const mapStateToProps = state => {
     }
   }
 
-export default connect(mapStateToProps, { getCities, getStates, addCity})(CityForm)
+export default connect(mapStateToProps, { getCities, getStates, addCity})(CityContainer)

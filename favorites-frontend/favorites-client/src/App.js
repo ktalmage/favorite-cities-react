@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 // import { getStates } from './actions/states'
 // import { getCities } from './actions/cities'
 // import StateForm from './containers/StateForm'
-import CityForm from './containers/CityForm'
+import CityForm from './containers/CityContainer'
 import Home from './containers/Home'
 import Navigation from './components/Navigation'
 
