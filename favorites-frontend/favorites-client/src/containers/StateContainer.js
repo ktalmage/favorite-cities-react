@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { addState } from '../actions/states'
+import { getStates } from '../actions/states'
 
  class StateContainer extends Component {
      state = {
@@ -16,6 +16,10 @@ import { addState } from '../actions/states'
         })
      }
 
+    //  componentDidMount(){
+    //      this.getStates()
+    //  }
+
      handleSubmit = event => {
         event.preventDefault()
         const usstate = {name: this.state.name}
@@ -27,15 +31,22 @@ import { addState } from '../actions/states'
      }
 
     render() {
+        
+        const states = this.props.usstates.map((usstate, i) => <li key={i}>{usstate.attributes.name}</li>)
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
-                    <input type="text" value={this.state.name}
-                    onChange={this.handleChange}/>
-                </form>
+                My States
+                {states}
             </div>
         )
     }
 }
 
-export default connect(null, { addState })(StateContainer)
+const mapStateToProps = state => {
+    return {
+        usstates: state.stateReducer.usstates,
+        statesloading: state.stateReducer.loading
+    }
+}
+
+export default connect(mapStateToProps, { getStates })(StateContainer)

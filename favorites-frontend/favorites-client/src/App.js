@@ -8,28 +8,26 @@ import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import CityContainer from './containers/CityContainer'
 import Home from './containers/Home'
 import Navigation from './components/Navigation'
+import City from './components/City'
+import CityForm from './components/CityForm'
+import State from './components/State'
 
 class App extends Component {
   
-
- render(){
+render(){
   
-  
-  
-     return (
+  return (
       <Router>
         <Navigation/>
       <div className="App">
-      
         <Switch>
           <Route exact path='/' component={Home}/>
-          <Route exact path='/containers' component={CityContainer}/>
+          <Route path='/cities' component={City}/>
+          <Route path='/states' component={State}/>
           <Route/>
        </Switch>
-        
-        </div>
+      </div>
       </Router>
-      
       );
     }
   }

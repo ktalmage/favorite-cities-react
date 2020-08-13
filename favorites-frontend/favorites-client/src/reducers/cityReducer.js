@@ -1,6 +1,7 @@
 export default (state = { cities : [], loading: false}, action) => {
     switch(action.type) {
         case "LOADING_CITIES": 
+        console.log(action)
             return {
                 ...state,
                 loading: true
@@ -13,11 +14,13 @@ export default (state = { cities : [], loading: false}, action) => {
                 loading: false
             }
         case "ADDING_CITY":
+            
             return {
                 ...state,
                 loading: true
             }
             case "CITY_ADDED":
+                
                 return {
                     ...state,
                     cities: [...state.cities, action.payload.data],

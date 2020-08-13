@@ -11,8 +11,9 @@ const link = {
 
 }
 
-const Navigation = (id) => (
-    <div>
+const Navigation = () => (
+    
+    <div className='navbar'>
         <NavLink
             to="/"
             exact
@@ -31,8 +32,18 @@ const Navigation = (id) => (
             }}
         >
         Cities</NavLink>
+        <NavLink
+            to="/states"
+            exact
+            style={link}
+            activeStyle={{
+                background: 'darkgreen'
+            }}
+        >
+        States</NavLink>
        
+
     </div>
-    )
+)
 
 export default Navigation

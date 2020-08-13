@@ -11,10 +11,11 @@ export const getCities = () => {
     }
 }
     export const addCity = (city) => {
+        debugger
         return (dispatch) => {
             dispatch({type: "ADDING_CITY"})
-            fetch('http://127.0.0.1:3001/cities',{
-                method: "POST",
+            fetch(CITY_URL,{
+                method: 'POST',
                 body: JSON.stringify(city),
                 headers: {
                     'Content-Type': 'application/json'
