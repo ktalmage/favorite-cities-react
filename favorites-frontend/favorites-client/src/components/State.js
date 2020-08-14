@@ -3,7 +3,7 @@ import StateContainer from '../containers/StateContainer'
 const State = props => {
     return (
         <div>
-            Hi
+            <h1>States List:</h1>
             <StateContainer/>
             
         </div>

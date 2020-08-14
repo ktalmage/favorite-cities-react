@@ -22,8 +22,8 @@ render(){
       <div className="App">
         <Switch>
           <Route exact path='/' component={Home}/>
-          <Route path='/cities' component={City}/>
-          <Route path='/states' component={State}/>
+          <Route exact path='/cities' component={City}/>
+          <Route exact path='/states' component={State}/>
           <Route/>
        </Switch>
       </div>

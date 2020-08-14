@@ -17,6 +17,7 @@ import { getStates } from '../actions/states'
      }
 
     //  componentDidMount(){
+    //      console.log(this.props)
     //      this.getStates()
     //  }
 
@@ -35,7 +36,7 @@ import { getStates } from '../actions/states'
         const states = this.props.usstates.map((usstate, i) => <li key={i}>{usstate.attributes.name}</li>)
         return (
             <div>
-                My States
+               
                 {states}
             </div>
         )

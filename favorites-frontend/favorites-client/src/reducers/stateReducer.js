@@ -1,12 +1,13 @@
 export default (state = { usstates : [], loading: false}, action) => {
     switch(action.type) {
         case "LOADING_STATES": 
+        console.log(action)
             return {
                 ...state,
                 loading: true
             }
         case "STATES_LOADED":
-           
+           console.log(action)
             return {
                 ...state,
                 usstates: action.payload.data,

@@ -14,13 +14,13 @@ export default (state = { cities : [], loading: false}, action) => {
                 loading: false
             }
         case "ADDING_CITY":
-            
+            console.log(action)
             return {
                 ...state,
                 loading: true
             }
             case "CITY_ADDED":
-                
+                console.log(action)
                 return {
                     ...state,
                     cities: [...state.cities, action.payload.data],
