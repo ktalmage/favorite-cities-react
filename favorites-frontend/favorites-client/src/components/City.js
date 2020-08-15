@@ -14,11 +14,11 @@ import React, { Component } from 'react'
         return (
             <div>
                 <div className="card" >
-                <li>{city.attributes.state.name}</li> 
-                <li>{city.attributes.name}</li> 
-                <li>{city.attributes.zipcode}</li>
-                <li>{city.attributes.title}</li>
-                <li>{city.attributes.description}</li>
+                <strong>State Name</strong><li>{city.attributes.state.name}</li> 
+                <strong>City Name</strong><li>{city.attributes.name}</li> 
+                <strong>Zip Code</strong><li>{city.attributes.zipcode}</li>
+                <strong>Title</strong><li>{city.attributes.title}</li>
+                <strong>Description</strong><li>{city.attributes.description}</li>
                     <button id={city.id} onClick={this.handleOnClick}>Delete</button>
                     
                 </div>
