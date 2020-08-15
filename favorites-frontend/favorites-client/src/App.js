@@ -24,7 +24,7 @@ render(){
        <Switch>
           <Route exact path='/' component={Home}/>
           <Route exact path='/cities' component={Cities}/>
-          <Route exact path='/cities' component={City}/>
+          <Route exact path='/cities/:id' component={City}/>
           <Route exact path='/states' component={State}/>
           <Route/>
        </Switch>

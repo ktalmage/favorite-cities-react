@@ -75,7 +75,7 @@ class CityContainer extends Component {
         
         return (
            <div>
-              
+            
               <form onSubmit={this.handleSubmit}>
                 <b>State Name:</b><br></br>
                   {this.props.loading ? <h4>Loading...</h4> : 
