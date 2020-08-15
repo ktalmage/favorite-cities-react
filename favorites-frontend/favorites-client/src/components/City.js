@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 
+
  class City extends Component {
 
     handleOnClick = (event) => {
+       
        this.props.deleteCity(event.target.id)
       }
 

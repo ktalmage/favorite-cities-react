@@ -24,6 +24,15 @@ const Navigation = () => (
         >
         Home</NavLink>
         <NavLink
+            to="/about"
+            exact
+            style={link}
+            activeStyle={{
+                background: 'darkgreen'
+            }}
+        >
+        About</NavLink>
+        <NavLink
             to="/cities"
             exact
             style={link}

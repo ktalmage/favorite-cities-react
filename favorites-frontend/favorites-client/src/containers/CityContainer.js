@@ -5,7 +5,7 @@ import { addCity } from '../actions/cities'
 import { getCities } from '../actions/cities'
 import { deleteCity } from '../actions/cities'
 import City from '../components/City'
-// import Cities from '../components/Cities'
+import Cities from '../components/Cities'
 class CityContainer extends Component {
      state = {
             name: "",
@@ -65,13 +65,15 @@ class CityContainer extends Component {
        
       }
 
+     
+
     render() {
       
         const usstates =  this.props.usstates.map((usstate, i) => 
         <option  value={usstate.id} key={i}>{usstate.attributes.name}</option>)
         const cities = this.props.cities.map((city, i) => {
         return <City key={i} city={city} deleteCity={this.props.deleteCity}/>})
-         
+        
         
         return (
            <div>
