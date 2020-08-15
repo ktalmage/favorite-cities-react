@@ -11,8 +11,7 @@ import { deleteCity } from '../actions/cities';
         return (
             <div>
                 <h2>My Travel Descriptions</h2>
-                    <About/>
-                  
+                 <CityContainer/>
             </div>
         )
     }

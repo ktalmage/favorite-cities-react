@@ -13,11 +13,14 @@ import React, { Component } from 'react'
         const { city } = this.props
         return (
             <div>
-                <ul>
-                    <li>{city.attributes.name}
+                <div className="card" >
+                <li>{city.attributes.name}</li> 
+                <li>{city.attributes.zipcode}</li>
+                <li>{city.attributes.title}</li>
+                <li>{city.attributes.description}</li>
                     <button id={city.id} onClick={this.handleOnClick}>Delete</button>
-                    </li>
-                </ul>
+                    
+                </div>
             </div>
         )
     }

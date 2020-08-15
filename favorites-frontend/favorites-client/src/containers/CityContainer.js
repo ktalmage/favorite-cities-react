@@ -88,6 +88,7 @@ class CityContainer extends Component {
                    <b>Description:</b><input type="text" onChange={this.handleChange} value={this.state.description} name="description"></input>
                   <input type="submit"></input>
                   </form>
+                  <br/>
                   {cities}
             </div>
         )
