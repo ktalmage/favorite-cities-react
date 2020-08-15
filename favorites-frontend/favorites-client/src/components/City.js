@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import Button from 'react-bootstrap/Button'
 
  class City extends Component {
 
@@ -19,7 +19,7 @@ import React, { Component } from 'react'
                 <strong>Zip Code</strong><li>{city.attributes.zipcode}</li>
                 <strong>Title</strong><li>{city.attributes.title}</li>
                 <strong>Description</strong><li>{city.attributes.description}</li>
-                    <button id={city.id} onClick={this.handleOnClick}>Delete</button>
+                    <Button variant="primary" id={city.id} onClick={this.handleOnClick}>Delete</Button>
                     
                 </div>
             </div>

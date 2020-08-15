@@ -6,7 +6,7 @@ import Home from './containers/Home'
 import Navigation from './components/Navigation'
 import City from './components/City'
 import Cities from './components/Cities'
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import State from './components/State'
 
 class App extends Component {
