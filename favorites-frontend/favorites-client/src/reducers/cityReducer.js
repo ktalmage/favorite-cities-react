@@ -13,6 +13,7 @@ export default (state = { cities : [], loading: false}, action) => {
                 cities: action.payload.data,
                 loading: false
             }
+           
         case "ADDING_CITY":
             console.log(action)
             return {
@@ -28,17 +29,20 @@ export default (state = { cities : [], loading: false}, action) => {
             }
 
             case "DELETING_CITY":
+                console.log(action)
                 return {
                     ...state,
                     loading: true
                 }
 
-            case "CITY_DELETED": 
+            case "CITY_DELETED":
+                console.log(action)
                 return {
                     ...state,
-                    cities: [...state.cities.filter(city => `${city.id}` !== action.payload.data)]
+                    cities: [...state.cities.filter(city => `${city.id}` !== action.id)]
+                    
                 }
-        default: 
-            return state
+            default: 
+                return state
     }
 }

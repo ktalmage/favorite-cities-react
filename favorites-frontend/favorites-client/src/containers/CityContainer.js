@@ -3,10 +3,9 @@ import { connect } from 'react-redux'
 import { getStates } from '../actions/states'
 import { addCity } from '../actions/cities'
 import { getCities } from '../actions/cities'
+import { deleteCity } from '../actions/cities'
 import City from '../components/City'
-
-
-
+// import Cities from '../components/Cities'
 class CityContainer extends Component {
      state = {
             name: "",
@@ -19,7 +18,7 @@ class CityContainer extends Component {
      }
 
      handleChange = (event) => {
-      //  debugger
+      
       if (event.target.type === "select-one"){
         let id= parseInt(event.target.options[event.target.options.selectedIndex].value)
         this.setState({
@@ -63,15 +62,20 @@ class CityContainer extends Component {
         
         this.props.getStates()
         this.props.getCities()
+       
       }
 
     render() {
       
         const usstates =  this.props.usstates.map((usstate, i) => 
         <option  value={usstate.id} key={i}>{usstate.attributes.name}</option>)
+        const cities = this.props.cities.map((city, i) => {
+        return <City key={i} city={city} deleteCity={this.props.deleteCity}/>})
+         
+        
         return (
            <div>
-             <City cities={this.props.cities}/>
+              
               <form onSubmit={this.handleSubmit}>
                 <b>State Name:</b><br></br>
                   {this.props.loading ? <h4>Loading...</h4> : 
@@ -81,21 +85,20 @@ class CityContainer extends Component {
                    <b>Title:</b><input type="text" onChange={this.handleChange} value={this.state.title} name="title"></input>
                    <b>Description:</b><input type="text" onChange={this.handleChange} value={this.state.description} name="description"></input>
                   <input type="submit"></input>
-                </form>
+                  </form>
+                  {cities}
             </div>
         )
     }
 }
 
 const mapStateToProps = state => {
-    return{
+    return {
       cities: state.cityReducer.cities,
       citiesloading: state.cityReducer.loading,
       usstates: state.stateReducer.usstates,
-      statesloading: state.stateReducer.loading,
-      
-      
+      statesloading: state.stateReducer.loading
     }
   }
 
-export default connect(mapStateToProps, {  getStates, getCities, addCity })(CityContainer)
+export default connect(mapStateToProps, {  getStates, addCity, getCities, deleteCity })(CityContainer)

@@ -5,13 +5,13 @@ export const getCities = () => {
         dispatch({type: "LOADING_CITIES"})
         fetch(CITY_URL)
         .then(resp => resp.json())
-        .then(cities => {dispatch({type: "CITYS_LOADED", payload: cities})
+        .then(cities => {dispatch({type: "CITIES_LOADED", payload: cities})
         
         })
     }
 }
     export const addCity = (city) => {
-        debugger
+        
         return (dispatch) => {
             dispatch({type: "ADDING_CITY"})
             fetch(CITY_URL,{

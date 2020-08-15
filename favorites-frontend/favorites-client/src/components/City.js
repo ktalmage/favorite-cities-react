@@ -1,17 +1,27 @@
 import React, { Component } from 'react'
 
+ class City extends Component {
 
-export default class City extends Component {
-    citiesList = () => {
-        
-        // return this.props.cities.map(city => <li key={city.id} name={city.name}></li>)
-        
-    }
+    handleOnClick = (event) => {
+        debugger
+        this.props.deleteCity(event.target.id)
+      }
+
     render() {
+        const { city } = this.props
         return (
             <div>
-                {this.citiesList()}
+               
+            <ul>
+            <li>{city.attributes.name}
+            <button id={city.id} onClick={this.handleOnClick}>Delete</button>
+            
+            </li>
+
+            </ul>
             </div>
         )
     }
 }
+
+export default City 

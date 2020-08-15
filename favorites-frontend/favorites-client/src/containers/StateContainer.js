@@ -10,34 +10,14 @@ import { getStates } from '../actions/states'
         loading: false
      }
 
-     handleChange = event => {
-        this.setState({
-            name: event.target.value
-        })
-     }
-
-    //  componentDidMount(){
-    //      console.log(this.props)
-    //      this.getStates()
-    //  }
-
-     handleSubmit = event => {
-        event.preventDefault()
-        const usstate = {name: this.state.name}
-        this.props.addState(usstate)
-        this.setState({
-            name: "",
-            loading: false
-        })
-     }
+    
 
     render() {
         
         const states = this.props.usstates.map((usstate, i) => <li key={i}>{usstate.attributes.name}</li>)
         return (
             <div>
-               
-                {states}
+               {states}
             </div>
         )
     }

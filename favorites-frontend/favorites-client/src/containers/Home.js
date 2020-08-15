@@ -8,6 +8,7 @@ const Home = () => {
             <h1>Welcome To Favorite Cities</h1>
             <h2>Catalogue Your Favorite Trip Experiences</h2>
             <CityContainer/>
+            
         </div>
     )
 }
