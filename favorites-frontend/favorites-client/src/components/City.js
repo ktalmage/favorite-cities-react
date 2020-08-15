@@ -14,6 +14,7 @@ import React, { Component } from 'react'
         return (
             <div>
                 <div className="card" >
+                <li>{city.attributes.state.name}</li> 
                 <li>{city.attributes.name}</li> 
                 <li>{city.attributes.zipcode}</li>
                 <li>{city.attributes.title}</li>
