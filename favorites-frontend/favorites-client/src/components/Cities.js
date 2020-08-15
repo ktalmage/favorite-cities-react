@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import CityContainer from '../containers/CityContainer'
-import CityFormat from './About'
+import About from './About'
 import City from './City'
 import { deleteCity } from '../actions/cities';
 
@@ -11,7 +11,7 @@ import { deleteCity } from '../actions/cities';
         return (
             <div>
                 <h2>My Travel Descriptions</h2>
-                    <CityFormat/>
+                    <About/>
                   
             </div>
         )
