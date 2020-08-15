@@ -13,15 +13,15 @@ import Button from 'react-bootstrap/Button'
         const { city } = this.props
         return (
             <div>
-                <div className="card" >
+                
                 <strong>State Name</strong><li>{city.attributes.state.name}</li> 
                 <strong>City Name</strong><li>{city.attributes.name}</li> 
                 <strong>Zip Code</strong><li>{city.attributes.zipcode}</li>
                 <strong>Title</strong><li>{city.attributes.title}</li>
                 <strong>Description</strong><li>{city.attributes.description}</li>
-                    <Button variant="primary" id={city.id} onClick={this.handleOnClick}>Delete</Button>
+                <Button variant="primary" id={city.id} onClick={this.handleOnClick}>Delete</Button>
                     
-                </div>
+                
             </div>
         )
     }
