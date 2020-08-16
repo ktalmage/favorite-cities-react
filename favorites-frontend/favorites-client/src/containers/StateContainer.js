@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getStates } from '../actions/states'
 
+
  class StateContainer extends Component {
      state = {
         usstate: {
@@ -10,18 +11,25 @@ import { getStates } from '../actions/states'
         loading: false
      }
 
-    
+    handleClick(event) {
+
+    }
 
     render() {
+
+     debugger
+       
+        const states = this.props.usstates.map((usstate,i) => <li key={i}>{usstate.attributes.name}</li>)
         
-        const states = this.props.usstates.map((usstate, i) => <li key={i}>{usstate.attributes.name}</li>)
         return (
             <div>
-               {states}
+                {states} 
             </div>
         )
     }
 }
+
+
 
 const mapStateToProps = state => {
     return {

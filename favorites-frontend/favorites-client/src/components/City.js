@@ -12,6 +12,7 @@ import Button from 'react-bootstrap/Button'
         
         const { city } = this.props
         return (
+            
             <div>
                 
                 <strong>State Name</strong><li>{city.attributes.state.name}</li> 
@@ -23,6 +24,7 @@ import Button from 'react-bootstrap/Button'
                     
                 
             </div>
+           
         )
     }
 }

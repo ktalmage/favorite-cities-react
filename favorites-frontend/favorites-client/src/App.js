@@ -7,7 +7,7 @@ import Navigation from './components/Navigation'
 import City from './components/City'
 import Cities from './components/Cities'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import State from './components/State'
+import StateList from './components/StateList'
 
 class App extends Component {
   
@@ -21,7 +21,8 @@ render(){
           <Route exact path='/' component={Home}/>
           <Route exact path='/cities' component={Cities}/>
           <Route exact path='/cities/:id' component={City}/>
-          <Route exact path='/states' component={State}/>
+          <Route exact path='/states' component={StateList}/>
+          <Route exact path='/states/:id'  component={StateList}/>
           <Route/>
        </Switch>
       </div>
