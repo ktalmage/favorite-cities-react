@@ -1,5 +1,4 @@
 import React from 'react'
-import CityContainer from './CityContainer'
 import About from '../components/About'
 
 

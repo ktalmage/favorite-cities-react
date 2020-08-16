@@ -5,7 +5,7 @@ import { addCity } from '../actions/cities'
 import { getCities } from '../actions/cities'
 import { deleteCity } from '../actions/cities'
 import City from '../components/City'
-import Cities from '../components/Cities'
+
 class CityContainer extends Component {
      state = {
             name: "",
