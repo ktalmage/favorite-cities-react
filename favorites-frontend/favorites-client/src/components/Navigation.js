@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-
+import Button from 'react-bootstrap/Button'
 const link = {
     width: '100px',
     padding: '12px',
@@ -14,7 +14,7 @@ const link = {
 
 const Navigation = () => (
     
-    <div className='navbar'>
+    <div className='navbar' style={{backgroundColor:'lightseagreen'}}>
         <NavLink
             to="/"
             exact
