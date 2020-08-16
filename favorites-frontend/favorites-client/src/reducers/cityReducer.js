@@ -39,7 +39,7 @@ export default (state = { cities : [], loading: false}, action) => {
                 console.log(action)
                 return {
                     ...state,
-                    cities: [...state.cities.filter(city => `${city.id}` !== action.id)]
+                    cities: [...state.cities.filter(city => `${city.id}` !== action.payload)]
                     
                 }
             default: 
