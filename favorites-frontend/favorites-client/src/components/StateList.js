@@ -1,14 +1,16 @@
 import React from 'react'
 import StateContainer from '../containers/StateContainer'
 
-const State = () => {
+
+const StateList = () => {
+    
     return (
         <div>
             <h1>States List:</h1>
-            <StateContainer/>
-            
+                <StateContainer/>
+           
         </div>
     )
 }
 
-export default State
+export default StateList

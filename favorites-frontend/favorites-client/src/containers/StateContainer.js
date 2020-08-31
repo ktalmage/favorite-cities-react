@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getStates } from '../actions/states'
+import { Link } from 'react-router-dom'
 
 
  class StateContainer extends Component {
@@ -11,19 +12,16 @@ import { getStates } from '../actions/states'
         loading: false
      }
 
-    handleClick(event) {
-
-    }
+    
 
     render() {
-
-     debugger
-       
-        const states = this.props.usstates.map((usstate,i) => <li key={i}>{usstate.attributes.name}</li>)
         
+     const states = this.props.usstates.map((usstate,i) => <Link to={`/states/${usstate.id}`} key={i}><li>{usstate.attributes.name}</li></Link> )
+   
         return (
             <div>
                 {states} 
+                
             </div>
         )
     }

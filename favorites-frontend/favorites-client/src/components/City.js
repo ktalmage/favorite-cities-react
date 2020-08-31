@@ -16,6 +16,7 @@ import Card from 'react-bootstrap/Card'
             
             <div>
                 <Card border="primary" style={{ width: 'auto' }} className="text-center">
+                   
                     <Card.Body>
                         <Card.Title><strong>State Name</strong></Card.Title>
                         <Card.Text><li>{city.attributes.state.name}</li><Card.Text/>
@@ -30,6 +31,7 @@ import Card from 'react-bootstrap/Card'
                         <Button variant="primary" id={city.id} onClick={this.handleOnClick}>Delete</Button>
                         </Card.Text>
                     </Card.Body>
+                   
                 </Card>    
             </div>
            

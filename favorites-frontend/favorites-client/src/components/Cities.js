@@ -1,16 +1,14 @@
 import React, { Component } from 'react'
 import CityContainer from '../containers/CityContainer'
-
-
-
-
- class Cities extends Component {
+// import Button from 'react-bootstrap/esm/Button'
+class Cities extends Component {
     render() {
         
         return (
             <div>
                 <h2>My Travel Descriptions</h2>
                  <CityContainer/>
+                 
             </div>
         )
     }

@@ -35,7 +35,7 @@ class CityContainer extends Component {
     }
 
      handleSubmit = event => {
-    
+    debugger
         event.preventDefault()
         
         const city = {
