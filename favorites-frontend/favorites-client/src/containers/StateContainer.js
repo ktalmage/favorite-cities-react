@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getStates } from '../actions/states'
+import { getCities } from '../actions/cities'
 import { Link } from 'react-router-dom'
 
 
@@ -12,7 +13,12 @@ import { Link } from 'react-router-dom'
         loading: false
      }
 
-    
+     componentDidMount(){
+        
+        this.props.getStates()
+        this.props.getCities()
+       
+      }
 
     render() {
         
@@ -36,4 +42,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { getStates })(StateContainer)
+export default connect(mapStateToProps, { getStates, getCities })(StateContainer)
