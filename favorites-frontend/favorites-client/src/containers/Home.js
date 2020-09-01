@@ -8,7 +8,7 @@ const Home = () => {
             <h1>Welcome To Favorite Cities</h1>
             <About/>
             <h3>Please Select One of the Options Above: </h3>
-            <img src="https://negativespace.co/wp-content/uploads/2019/02/negative-space-blue-rolling-mountains.jpg" alt="Mountains" width="1500px"/>
+            <img src="https://negativespace.co/wp-content/uploads/2019/02/negative-space-blue-rolling-mountains.jpg" alt="Mountains" width="100%"/>
         </div>
     )
 }

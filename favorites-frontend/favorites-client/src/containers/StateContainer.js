@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom'
      }
 
      componentDidMount(){
-        
+       
         
         if (this.props.statesloading && this.props.citiesloading) {
             this.props.getStates()
@@ -37,7 +37,7 @@ import { Link } from 'react-router-dom'
 
 
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
     return {
         cities: state.cityReducer.cities,
         citiesloading: state.cityReducer.loading,
@@ -45,6 +45,7 @@ const mapStateToProps = state => {
         statesloading: state.stateReducer.loading,
         
     }
+    
 }
 
 export default connect(mapStateToProps, { getStates, getCities })(StateContainer)

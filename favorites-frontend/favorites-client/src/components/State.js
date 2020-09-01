@@ -21,6 +21,7 @@ import {deleteCity} from '../actions/cities'
 }
 
 const mapStateToProps = (state, props) => {
+    
     const id = props.match.params.stateID
     const usstate = state.stateReducer.usstates[id - 1]
     let name
@@ -30,8 +31,9 @@ const mapStateToProps = (state, props) => {
     else {
         name = usstate.attributes.name
     }
-   console.log(usstate)
+   
     return {
+        
         name: name,
         cities: state.cityReducer.cities.filter((c) => {
             // eslint-disable-next-line 
@@ -39,6 +41,7 @@ const mapStateToProps = (state, props) => {
         })
 
     }
+    
 }
 
 
