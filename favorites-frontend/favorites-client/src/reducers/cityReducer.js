@@ -1,4 +1,4 @@
-export default (state = { cities : [], loading: false}, action) => {
+export default (state = { cities : [], loading: true}, action) => {
     switch(action.type) {
         case "LOADING_CITIES": 
         console.log(action)

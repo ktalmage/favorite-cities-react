@@ -15,9 +15,11 @@ import { Link } from 'react-router-dom'
 
      componentDidMount(){
         
-        this.props.getStates()
-        this.props.getCities()
-       
+        
+        if (this.props.statesloading && this.props.citiesloading) {
+            this.props.getStates()
+            this.props.getCities()
+           }
       }
 
     render() {
@@ -37,8 +39,11 @@ import { Link } from 'react-router-dom'
 
 const mapStateToProps = state => {
     return {
+        cities: state.cityReducer.cities,
+        citiesloading: state.cityReducer.loading,
         usstates: state.stateReducer.usstates,
-        statesloading: state.stateReducer.loading
+        statesloading: state.stateReducer.loading,
+        
     }
 }
 

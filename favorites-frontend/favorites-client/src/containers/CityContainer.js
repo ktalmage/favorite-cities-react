@@ -35,7 +35,7 @@ class CityContainer extends Component {
     }
 
      handleSubmit = event => {
-    debugger
+    
         event.preventDefault()
         
         const city = {
@@ -59,9 +59,11 @@ class CityContainer extends Component {
         })
      }
      componentDidMount(){
-        
-        this.props.getStates()
-        this.props.getCities()
+       
+        if (this.props.statesloading && this.props.citiesloading) {
+          this.props.getStates()
+          this.props.getCities()
+         }
        
       }
 

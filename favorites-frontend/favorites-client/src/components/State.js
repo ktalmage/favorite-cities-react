@@ -2,7 +2,7 @@ import React from 'react'
 import City from './City'
 import { connect } from 'react-redux'
 import {deleteCity} from '../actions/cities'
-// import {getCity} from '../actions/cities'
+
 
 
  const State = ({  cities, name, deleteCity}) => {
@@ -34,6 +34,7 @@ const mapStateToProps = (state, props) => {
     return {
         name: name,
         cities: state.cityReducer.cities.filter((c) => {
+            // eslint-disable-next-line 
             return c.attributes.state.id == id
         })
 
