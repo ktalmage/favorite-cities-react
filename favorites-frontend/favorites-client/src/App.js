@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import {  Route} from 'react-router-dom'
+import {  Route } from 'react-router-dom'
 import Home from './containers/Home'
 import Navigation from './components/Navigation'
 import City from './components/City'
@@ -24,9 +24,7 @@ render(){
           <Route exact path='/cities/:id' component={City}/>
           <Route exact path='/states' component={StateList}/>
           <Route exact path='/states/:stateID'  component={State}/>
-         
-       
-      </div>
+        </div>
       
       );
     }
