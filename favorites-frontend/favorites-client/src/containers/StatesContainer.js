@@ -25,8 +25,12 @@ import { Link } from 'react-router-dom'
     
 
     render() {
-        // eslint-disable-next-line
-     const states = this.props.usstates.filter( us => us.attributes.cities != "").map((usstate,i) => <Link to={`/states/${usstate.id}`} key={i}><li>{usstate.attributes.name}</li></Link> )
+        // need to fix mounting issue with the added filter method - SEE 
+    //     const states = this.props.usstates.filter( us => us.attributes.cities != "")
+    //  .map((usstate,i) => <Link to={`/states/${usstate.id}`} key={i}><li>{usstate.attributes.name}</li></Link> )
+
+        
+     const states = this.props.usstates.map((usstate,i) => <Link to={`/states/${usstate.id}`} key={i}><li>{usstate.attributes.name}</li></Link> )
    
         return (
             <div>
@@ -34,6 +38,7 @@ import { Link } from 'react-router-dom'
             </div>
         )
     }
+    
 }
 
 
