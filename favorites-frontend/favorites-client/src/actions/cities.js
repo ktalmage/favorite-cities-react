@@ -29,7 +29,7 @@ export const getCities = () => {
             })
             console.log('e')
         }
-        console.log('f')
+        
     }
 
     export const deleteCity = (id) => {

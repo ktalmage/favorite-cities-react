@@ -76,11 +76,8 @@ class CityContainer extends Component {
         const usstates =  this.props.usstates.map((usstate, i) => 
         <option  value={usstate.id} key={i}>{usstate.attributes.name}</option>)
         const citySearch = this.props.cities.filter( c => c.attributes.description.toLowerCase().includes(this.state.search.toLowerCase())).map((city, i) => {
-          return <City key={i} city={city} deleteCity={this.props.deleteCity}/>})
-        const cities = this.props.cities.map((city, i) => {
         return <City key={i} city={city} deleteCity={this.props.deleteCity}/>})
-        
-        
+       
         return (
            <div>
             
@@ -98,8 +95,7 @@ class CityContainer extends Component {
                     <b>Search</b><input type="text" onChange={this.handleChange} value={this.state.search} name="search" ></input>
                   </form>
                   <br/>
-                  {/* {cities} */}
-                  {citySearch}
+                 {citySearch}
             </div>
         )
     }
