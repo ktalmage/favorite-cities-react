@@ -1,51 +1,55 @@
-import React, { Component } from 'react'
+import React from 'react'
+import City from '../components/City'
 import { connect } from 'react-redux'
-import { getStates } from '../actions/states'
-import { getCities } from '../actions/cities'
-import { Link } from 'react-router-dom'
+import {deleteCity} from '../actions/cities'
 
 
- class StateContainer extends Component {
-     state = {
-        usstate: {
-            name: ""
-        },
-        loading: false
-     }
 
-     componentDidMount(){
-       
+ const State = ({  cities, name, deleteCity}) => {
+    
+    const cityList = cities.map((city, i) => {
         
-        if (this.props.statesloading && this.props.citiesloading) {
-            this.props.getStates()
-            this.props.getCities()
-           }
-      }
-
-    render() {
-        
-     const states = this.props.usstates.map((usstate,i) => <Link to={`/states/${usstate.id}`} key={i}><li>{usstate.attributes.name}</li></Link> )
-   
-        return (
-            <div>
-                {states} 
-                
-            </div>
-        )
-    }
+        return <City key={i} city={city} deleteCity={deleteCity}/>})
+      
+    return (
+        <div>
+            <h1>{ name }</h1>
+                {cityList}
+        </div>
+    )
+    
 }
 
-
-
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, props) => {
+   
+    const id = props.match.params.stateID
+    
+    const usstate = state.stateReducer.usstates[id - 1]
+    let name
+    if (usstate === undefined) {
+        name = undefined
+    }
+    else {
+        name = usstate.attributes.name
+    }
+   
     return {
-        cities: state.cityReducer.cities,
-        citiesloading: state.cityReducer.loading,
-        usstates: state.stateReducer.usstates,
-        statesloading: state.stateReducer.loading,
         
+        name: name,
+        cities: state.cityReducer.cities.filter((c) => {
+            // eslint-disable-next-line 
+            return c.attributes.state.id == id
+        })
+
     }
     
 }
 
-export default connect(mapStateToProps, { getStates, getCities })(StateContainer)
+
+export default connect(mapStateToProps, {deleteCity} )(State)
+
+
+
+
+
+

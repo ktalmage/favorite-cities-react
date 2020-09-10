@@ -7,7 +7,7 @@ import City from './components/City'
 import Cities from './components/Cities'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import StateList from './components/StateList'
-import State from './components/State'
+import StateContainer from './containers/StateContainer'
 
 class App extends Component {
   
@@ -23,7 +23,7 @@ render(){
           <Route exact path='/cities' component={Cities}/>
           <Route exact path='/cities/:id' component={City}/>
           <Route exact path='/states' component={StateList}/>
-          <Route exact path='/states/:stateID'  component={State}/>
+          <Route exact path='/states/:stateID'  component={StateContainer}/>
         </div>
       
       );

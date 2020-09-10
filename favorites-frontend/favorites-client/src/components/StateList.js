@@ -1,5 +1,5 @@
 import React from 'react'
-import StateContainer from '../containers/StateContainer'
+import StatesContainer from '../containers/StatesContainer'
 
 
 const StateList = () => {
@@ -7,7 +7,7 @@ const StateList = () => {
     return (
         <div>
             <h1>States List:</h1>
-                <StateContainer/>
+                <StatesContainer/>
            
         </div>
     )

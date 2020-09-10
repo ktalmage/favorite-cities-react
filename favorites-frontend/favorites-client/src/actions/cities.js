@@ -11,8 +11,9 @@ export const getCities = () => {
     }
 }
     export const addCity = (city) => {
-        
+        console.log('b')
         return (dispatch) => {
+            console.log('c')
             dispatch({type: "ADDING_CITY"})
             fetch(CITY_URL,{
                 method: 'POST',
@@ -22,9 +23,14 @@ export const getCities = () => {
                 }
             })
             .then(resp=> resp.json())
-            .then(city => dispatch({type: "CITY_ADDED", payload: city}))
+            .then(city => {
+                console.log('d')
+                dispatch({type: "CITY_ADDED", payload: city})
+            })
+            console.log('e')
+        }
+        console.log('f')
     }
-}
 
     export const deleteCity = (id) => {
         return (dispatch) => {
